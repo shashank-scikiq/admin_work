@@ -44,8 +44,8 @@ def send_message(text_msg: list):
     sender = os.getenv("SENDER")
     password = os.getenv("EMAIL_PASSWORD")
 
-    # receiver = ['shashank.raj@ondc.org', 'rohit.kumar@scikiq.com', 'pritha.datta@ondc.org', 'ankur.pandey@scikiq.com']
-    receiver = ['shashank.raj@ondc.org']
+    receiver = ['shashank.raj@ondc.org', 'rohit.kumar@scikiq.com', 'pritha.datta@ondc.org', 'ankur.pandey@scikiq.com']
+    # receiver = ['shashank.raj@ondc.org']
     subject = f"Status update for {datetime.now().strftime('%Y-%m-%d')}"
     message = "\n"
 
