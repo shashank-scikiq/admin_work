@@ -15,9 +15,9 @@ def send_email(sender_email, sender_password, receiver_email, subject, message):
 
     # Create a multipart message
     msg = MIMEMultipart("alternative")
-    msg['From'] = "shashank.raj@ondc.org"
-    msg['To'] = "shashank.raj@ondc.org"
-    msg['Subject'] = f"Status update for {datetime.now().strftime('%Y-%m-%d')}"
+    msg['From'] = sender_email
+    msg['To'] = ', '.join(receiver_email)
+    msg['Subject'] = subject
 
     # Attach message to email
     msg.attach(MIMEText(message, 'plain'))
@@ -44,7 +44,7 @@ def send_message(text_msg: list):
     sender = os.getenv("SENDER")
     password = os.getenv("EMAIL_PASSWORD")
 
-    receiver = os.getenv("RECEIVER")
+    receiver = ['shashank.raj@ondc.org', 'rohit.kumar@scikiq.com', 'pritha.datta@ondc.org', 'ankur.pandey@scikiq.com']
     subject = f"Status update for {datetime.now().strftime('%Y-%m-%d')}"
     message = "\n"
 
@@ -54,12 +54,12 @@ def send_message(text_msg: list):
     for x in text_msg:
         for y in x:
             print(y)
-            if y in ["Done", "In Progress", "On Hold", "Delayed"]:
+            if y in ["Done", "In Progress", "On Hold", "Delayed", "NA"]:
                 print("=" * 20)
                 message = message + y + "\n"
-                message = message+"========================"+"\n"
+                message = message + "========================" + "\n"
             else:
-                message = message+y+"\n"
+                message = message + y + "\n"
 
     print("Final Message is", message)
     # Send email
