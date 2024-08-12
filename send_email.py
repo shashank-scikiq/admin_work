@@ -29,9 +29,9 @@ def send_email(sender_email, sender_password, receiver_email, subject, message):
     try:
         # Login to the SMTP server
         server.login(sender_email, sender_password)
-        print("receiver is ",receiver_email)
+        
         # Send email
-        # server.sendmail(sender_email, receiver_email, msg.as_string())
+        server.sendmail(sender_email, receiver_email, msg.as_string())
         print("Email sent successfully!")
     except Exception as e:
         print("Failed to send email. Error:", str(e))
