@@ -6,12 +6,6 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-if os.path.exists(".env"):
-    try:
-        load_dotenv(".env")
-    except Exception as e:
-        raise e
-
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = [
@@ -20,7 +14,7 @@ SCOPES = [
 
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = os.getenv("SAMPLE_SPREADSHEET_ID")
-SAMPLE_RANGE_NAME = "Daily Updates!A2:D"
+SAMPLE_RANGE_NAME = os.getenv("SAMPLE_RANGE_NAME")
 TOKEN = os.getenv("TOKEN_FILE")
 CRED = os.getenv("CRED_FILE")
 
