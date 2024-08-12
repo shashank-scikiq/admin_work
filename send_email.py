@@ -29,9 +29,9 @@ def send_email(sender_email, sender_password, receiver_email, subject, message):
     try:
         # Login to the SMTP server
         server.login(sender_email, sender_password)
-
+        print("receiver is ",receiver_email)
         # Send email
-        server.sendmail(sender_email, receiver_email, msg.as_string())
+        # server.sendmail(sender_email, receiver_email, msg.as_string())
         print("Email sent successfully!")
     except Exception as e:
         print("Failed to send email. Error:", str(e))
@@ -42,15 +42,16 @@ def send_email(sender_email, sender_password, receiver_email, subject, message):
 
 def send_message(text_msg: list):
     sender = os.getenv("SENDER")
-    password = os.getenv("EMAIL_PASSWORD")
+    password = os.getenv("EMAIL_PASSWORD") 
+    receivers = os.getenv("RECEIVER")
+    receiver = []
+    for i, val in enumerate(receivers.split("'")):
+        if i % 2 != 0:
+            receiver.append(val)
+            print(val)
 
-    receiver = ['shashank.raj@ondc.org', 'rohit.kumar@scikiq.com', 'pritha.datta@ondc.org', 'ankur.pandey@scikiq.com']
-    # receiver = ['shashank.raj@ondc.org']
     subject = f"Status update for {datetime.now().strftime('%Y-%m-%d')}"
     message = "\n"
-
-    # for x in text_msg:
-    #     message = "\n".join(x)
 
     for x in text_msg:
         for y in x:
@@ -63,7 +64,6 @@ def send_message(text_msg: list):
                 message = message + y + "\n"
 
     print("Final Message is", message)
-    # Send email
 
     try:
         send_email(sender, password, receiver, subject, message)
