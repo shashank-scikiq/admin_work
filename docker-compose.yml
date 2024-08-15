@@ -6,4 +6,4 @@ services:
     env_file:
       - /home/shashank_daaslabs/git/admin_work/.env
 
-    restart: unless-stopped
+    restart: no
