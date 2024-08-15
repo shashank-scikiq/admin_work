@@ -5,8 +5,13 @@ import sys
 
 
 def main():
-    message = get_update()
-    send_message(message)
+    try:
+        message = get_update()
+        send_message(message)
+    except Exception as e:
+        raise e
+    else:
+        print("Successful.")
 
 
 if __name__ == "__main__":
