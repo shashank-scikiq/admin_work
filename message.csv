@@ -1,0 +1,20 @@
+,Date,Name,Update,Status
+0,2024-10-07,Ankur Pandey,"worked on logistic search page issues listed by Pritha
+-""  Logistics:- 
+When someone has selected the highest demand during peak morning or eve time, automatically change the time interval above. ELse it looks a bit off. Also, if someone selects another slot, then change the insights back to the 1st one.
+It's not intuitive for a user to select again a  time interval to select everything. WHat you can do is keep a deselect option on top
+Tale 4- Bangalore map cutting out""",In Progress
+1,2024-10-07,Bikas Pandey,Worked on fixing the apis for  category and sub category  for B2c. Worked with surbi on checking the numbers for active and total sellers.,Done
+2,2024-10-07,Shashank Raj,COntainerized the Internal Dashboard. Now the internal dashboard will spin up automatically when the EC2 server restarts. Fixed the data duplication issue with active/total sellers. Created github action for OD internal dashboard for automatic deployment. ,Done
+3,2024-10-06,Shashank Raj,Fixed the active/total sellers' issue by writing a Python code and converted the SQL code to Python. Pushed the code changes directly to Staging environment. Manually loaded the data to the AWS EC2 server for 8081.,Done
+4,2024-10-06,Ankur Pandey,"went through all the APIs and fixed issues in that if exist, pushed updated build of the code for 8081",Done
+5,2024-10-05,Shashank Raj,"The issue with Prod ETL was not resolved, so ran the ETL pipeline a few times as there was a data issue with the Prod Server's data load. Then verified the numbers.",Done
+6,2024-10-05,Ankur Pandey,Dumped the data from the ec2_all cloud instance and imported it into my local system. This required manually creating missing tables with SQL queries,Done
+7,2024-10-04,Ankur Pandey,Worked on Logistic search UI change for selction of time range. removed drop down with range selector UI.,Done
+8,2024-10-04,Shashank Raj,"While loading the data into 8081, there was an issue with the EC2 server and my access was gone. This caused the ETL pipeline to fail. Also, there was an issue with the total sellers' data. Also, ran the ETL for Prod. ",Done
+9,2024-10-03,Ankur Pandey,worked on logistic search page UI for time range filter and updated logistic search page APIs with time filter for the data.,Done
+10,2024-10-03,Shashank Raj,"Loaded the data manually on the EC2 8082 as AWS Athena access was revoked. After that, manually loaded the data into the EC2 Server for 8082. This is a part of the monthly data load. ",Done
+11,2024-10-03,Bikas Pandey,"Continued working on completing key data insight sql part and was able to get th output for Order/Seller Mix, Average tenure of active stores",In Progress
+12,2024-10-01,Ankur Pandey,Created seller table with all the business logic for the month of August and handed over it to Pritha for signoff ,Done
+13,2024-10-01,Bikas Pandey,Started working on newly introduced key data insight metrices. Completed the first two insight sql queries (% Seller repeat rate & % Newly active stores per month),In Progress
+14,2024-09-30,Ankur Pandey,"Worked on logistic search page for new insights, updated API and did UI changes for the same. Had internal discussion for the issues on internal dashboard with team.",Done

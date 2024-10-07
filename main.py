@@ -6,7 +6,7 @@ import sys
 
 def main():
     try:
-        message = get_update()
+        message = get_update(10)
         send_message(message)
     except Exception as e:
         raise e

@@ -7,6 +7,13 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 
+try:
+    load_dotenv(".env")
+except Exception as e:
+    raise e
+else:
+    print("Loaded the env variables.")
+
 # If modifying these scopes, delete the file token.json.
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets.readonly"
